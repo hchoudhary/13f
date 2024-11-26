@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns1:informationTable xmlns:ns1="http://www.sec.gov/edgar/document/thirteenf/informationtable">
+	<ns1:infoTable>
+		<ns1:nameOfIssuer>123 Co</ns1:nameOfIssuer>
+		<ns1:titleOfClass>COM</ns1:titleOfClass>
+		<ns1:cusip>00206R102</ns1:cusip>
+		<ns1:figi>BBG001560KQ0</ns1:figi>
+		<ns1:value>1234567</ns1:value>
+		<ns1:shrsOrPrnAmt>
+			<ns1:sshPrnamt>123</ns1:sshPrnamt>
+			<ns1:sshPrnamtType>SH</ns1:sshPrnamtType>
+		</ns1:shrsOrPrnAmt>
+		<ns1:putCall>Put</ns1:putCall>
+		<ns1:investmentDiscretion>SOLE</ns1:investmentDiscretion>
+		<ns1:otherManager>12</ns1:otherManager>
+		<ns1:votingAuthority>
+			<ns1:Sole>123</ns1:Sole>
+			<ns1:Shared>0</ns1:Shared>
+			<ns1:None>123</ns1:None>
+		</ns1:votingAuthority>
+	</ns1:infoTable>
+	<ns1:infoTable>
+		<ns1:nameOfIssuer>ABC Inc</ns1:nameOfIssuer>
+		<ns1:titleOfClass>COM SER A</ns1:titleOfClass>
+		<ns1:cusip>30420103</ns1:cusip>
+		<ns1:figi>BBGA115608Q1</ns1:figi>
+		<ns1:value>2345678</ns1:value>
+		<ns1:shrsOrPrnAmt>
+			<ns1:sshPrnamt>234</ns1:sshPrnamt>
+			<ns1:sshPrnamtType>PRN</ns1:sshPrnamtType>
+		</ns1:shrsOrPrnAmt>
+		<ns1:putCall>Put</ns1:putCall>
+		<ns1:investmentDiscretion>DFND</ns1:investmentDiscretion>
+		<ns1:otherManager>1,34,56,13</ns1:otherManager>
+		<ns1:votingAuthority>
+			<ns1:Sole>25</ns1:Sole>
+			<ns1:Shared>30</ns1:Shared>
+			<ns1:None>179</ns1:None>
+		</ns1:votingAuthority>
+	</ns1:infoTable>
+	<ns1:infoTable>
+		<ns1:nameOfIssuer>DEFG Corp</ns1:nameOfIssuer>
+		<ns1:titleOfClass>SHS CLASS A A</ns1:titleOfClass>
+		<ns1:cusip>03076C106</ns1:cusip>
+		<ns1:figi>BBGA123456789</ns1:figi>
+		<ns1:value>3456789</ns1:value>
+		<ns1:shrsOrPrnAmt>
+			<ns1:sshPrnamt>345</ns1:sshPrnamt>
+			<ns1:sshPrnamtType>PRN</ns1:sshPrnamtType>
+		</ns1:shrsOrPrnAmt>
+		<ns1:putCall>Call</ns1:putCall>
+		<ns1:investmentDiscretion>OTR</ns1:investmentDiscretion>
+		<ns1:otherManager>1,56,14</ns1:otherManager>
+		<ns1:votingAuthority>
+			<ns1:Sole>345</ns1:Sole>
+			<ns1:Shared>0</ns1:Shared>
+			<ns1:None>0</ns1:None>
+		</ns1:votingAuthority>
+	</ns1:infoTable>
+	<ns1:infoTable>
+		<ns1:nameOfIssuer>HJK Partners</ns1:nameOfIssuer>
+		<ns1:titleOfClass>UNIT LTD PAR</ns1:titleOfClass>
+		<ns1:cusip>32511107</ns1:cusip>
+		<ns1:figi>BBGABCD12343</ns1:figi>
+		<ns1:value>4567890</ns1:value>
+		<ns1:shrsOrPrnAmt>
+			<ns1:sshPrnamt>456</ns1:sshPrnamt>
+			<ns1:sshPrnamtType>PRN</ns1:sshPrnamtType>
+		</ns1:shrsOrPrnAmt>
+		<ns1:putCall>Call</ns1:putCall>
+		<ns1:investmentDiscretion>SOLE</ns1:investmentDiscretion>
+		<ns1:otherManager>456</ns1:otherManager>
+		<ns1:votingAuthority>
+			<ns1:Sole>0</ns1:Sole>
+			<ns1:Shared>0</ns1:Shared>
+			<ns1:None>0</ns1:None>
+		</ns1:votingAuthority>
+	</ns1:infoTable>
+	<ns1:infoTable>
+		<ns1:nameOfIssuer>LMNO Tech Cor</ns1:nameOfIssuer>
+		<ns1:titleOfClass>COM ADDED</ns1:titleOfClass>
+		<ns1:cusip>37833100</ns1:cusip>
+		<ns1:figi>BBG001234567</ns1:figi>
+		<ns1:value>56789012</ns1:value>
+		<ns1:shrsOrPrnAmt>
+			<ns1:sshPrnamt>56789</ns1:sshPrnamt>
+			<ns1:sshPrnamtType>SH</ns1:sshPrnamtType>
+		</ns1:shrsOrPrnAmt>
+		<ns1:putCall>Put</ns1:putCall>
+		<ns1:investmentDiscretion>DFND</ns1:investmentDiscretion>
+		<ns1:otherManager>15</ns1:otherManager>
+		<ns1:votingAuthority>
+			<ns1:Sole>1234</ns1:Sole>
+			<ns1:Shared>23456</ns1:Shared>
+			<ns1:None>32099</ns1:None>
+		</ns1:votingAuthority>
+	</ns1:infoTable>
+	<ns1:infoTable>
+		<ns1:nameOfIssuer>PQRST Partners</ns1:nameOfIssuer>
+		<ns1:titleOfClass>SPONSORED A</ns1:titleOfClass>
+		<ns1:cusip>73302101</ns1:cusip>
+		<ns1:figi>BBGHJ46RH856</ns1:figi>
+		<ns1:value>67890</ns1:value>
+		<ns1:shrsOrPrnAmt>
+			<ns1:sshPrnamt>678</ns1:sshPrnamt>
+			<ns1:sshPrnamtType>SH</ns1:sshPrnamtType>
+		</ns1:shrsOrPrnAmt>
+		<ns1:putCall>Put</ns1:putCall>
+		<ns1:investmentDiscretion>OTR</ns1:investmentDiscretion>
+		<ns1:otherManager>1,56</ns1:otherManager>
+		<ns1:votingAuthority>
+			<ns1:Sole>200</ns1:Sole>
+			<ns1:Shared>100</ns1:Shared>
+			<ns1:None>378</ns1:None>
+		</ns1:votingAuthority>
+	</ns1:infoTable>
+	<ns1:infoTable>
+		<ns1:nameOfIssuer>UVW Cap LP</ns1:nameOfIssuer>
+		<ns1:titleOfClass>UNIT LTD PAR</ns1:titleOfClass>
+		<ns1:cusip>84670702</ns1:cusip>
+		<ns1:figi>BBG006GG6567</ns1:figi>
+		<ns1:value>7890123</ns1:value>
+		<ns1:shrsOrPrnAmt>
+			<ns1:sshPrnamt>7890</ns1:sshPrnamt>
+			<ns1:sshPrnamtType>PRN</ns1:sshPrnamtType>
+		</ns1:shrsOrPrnAmt>
+		<ns1:putCall>Put</ns1:putCall>
+		<ns1:investmentDiscretion>SOLE</ns1:investmentDiscretion>
+		<ns1:otherManager>7890</ns1:otherManager>
+		<ns1:votingAuthority>
+			<ns1:Sole>7890</ns1:Sole>
+			<ns1:Shared>0</ns1:Shared>
+			<ns1:None>0</ns1:None>
+		</ns1:votingAuthority>
+	</ns1:infoTable>
+	<ns1:infoTable>
+		<ns1:nameOfIssuer>XYZ Series Trust</ns1:nameOfIssuer>
+		<ns1:titleOfClass>S&amp;P BIOTECH</ns1:titleOfClass>
+		<ns1:cusip>110122108</ns1:cusip>
+		<ns1:figi>BBG123456789</ns1:figi>
+		<ns1:value>89012</ns1:value>
+		<ns1:shrsOrPrnAmt>
+			<ns1:sshPrnamt>8901</ns1:sshPrnamt>
+			<ns1:sshPrnamtType>PRN</ns1:sshPrnamtType>
+		</ns1:shrsOrPrnAmt>
+		<ns1:putCall>Put</ns1:putCall>
+		<ns1:investmentDiscretion>OTR</ns1:investmentDiscretion>
+		<ns1:otherManager>1,34,56,19</ns1:otherManager>
+		<ns1:votingAuthority>
+			<ns1:Sole>3500</ns1:Sole>
+			<ns1:Shared>1000</ns1:Shared>
+			<ns1:None>4401</ns1:None>
+		</ns1:votingAuthority>
+	</ns1:infoTable>
+</ns1:informationTable>

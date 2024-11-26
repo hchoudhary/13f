@@ -1,0 +1,65 @@
+import pandas as pd
+import xml.etree.ElementTree as ET
+
+def validate_excel_data(file_path):
+    # Load the Excel file
+    df = pd.read_excel(file_path)
+
+    # Check if there are 13 columns
+    if df.shape[1] != 13:
+        raise ValueError("The table must have exactly 13 columns.")
+    
+    # Check for data validation rules
+    if not all(df["CUSIP"].str.len() == 9):
+        raise ValueError("CUSIP number must be exactly 9 characters.")
+    if "FIGI" in df.columns and not df["FIGI"].dropna().str.len().eq(12).all():
+        raise ValueError("FIGI values must be 12 characters or left blank.")
+    if not df["Shares/Principal"].isin(["SH", "PRN"]).all():
+        raise ValueError("Invalid values in 'Shares/Principal' column.")
+    if "Put/Call" in df.columns and not df["Put/Call"].dropna().isin(["Put", "Call"]).all():
+        raise ValueError("Invalid values in 'Put/Call' column.")
+    if not df["Investment Discretion"].isin(["SOLE", "DFND", "OTR"]).all():
+        raise ValueError("Invalid values in 'Investment Discretion' column.")
+    if not df["Sole"].apply(lambda x: isinstance(x, int)).all():
+        raise ValueError("All values in 'Sole' column must be whole numbers.")
+    if not df["Shared"].apply(lambda x: isinstance(x, int)).all():
+        raise ValueError("All values in 'Shared' column must be whole numbers.")
+    if not df["None"].apply(lambda x: isinstance(x, int)).all():
+        raise ValueError("All values in 'None' column must be whole numbers.")
+
+    return df
+
+def create_xml(df, output_file):
+    root = ET.Element("informationTable")
+
+    for _, row in df.iterrows():
+        info_table_entry = ET.SubElement(root, "infoTable")
+
+        for col in df.columns:
+            col_tag = col.replace(" ", "").replace("/", "").replace(".", "")
+            entry = ET.SubElement(info_table_entry, col_tag)
+            entry.text = str(row[col]) if pd.notna(row[col]) else ""
+
+    # Write the XML tree to a file
+    tree = ET.ElementTree(root)
+    tree.write(output_file, encoding="utf-8", xml_declaration=True)
+    print(f"XML file successfully created: {output_file}")
+
+def main():
+    # Path to input Excel file
+    input_excel = "information_table.xlsx"  # Replace with your file path
+    output_xml = "form13F.xml"
+
+    try:
+        # Step 1: Validate Excel data
+        df = validate_excel_data(input_excel)
+
+        # Step 2: Generate XML file
+        create_xml(df, output_xml)
+    except ValueError as e:
+        print(f"Validation Error: {e}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+if __name__ == "__main__":
+    main()

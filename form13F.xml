@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<informationTable xmlns="http://www.sec.gov/edgar/document/thirteenf/informationtable">
+  <infoTable>
+    <nameOfIssuer>123 Co</nameOfIssuer>
+    <titleOfClass>COM</titleOfClass>
+    <cusip>123456789</cusip>
+    <figi>BBG001560KQ0</figi>
+    <value>1234567</value>
+    <putCall>Put</putCall>
+    <investmentDiscretion>SOLE</investmentDiscretion>
+    <otherManager>12</otherManager>
+    <shrsOrPrnAmt>
+      <sshPrnamt>123</sshPrnamt>
+      <sshPrnamtType>SH</sshPrnamtType>
+    </shrsOrPrnAmt>
+    <votingAuthority>
+      <Sole>123</Sole>
+      <Shared>0</Shared>
+      <None>123</None>
+    </votingAuthority>
+  </infoTable>
+  <infoTable>
+    <nameOfIssuer>ABC Inc</nameOfIssuer>
+    <titleOfClass>COM SER A</titleOfClass>
+    <cusip>123456789</cusip>
+    <figi>BBG001560KQ1</figi>
+    <value>2345678</value>
+    <putCall>Put</putCall>
+    <investmentDiscretion>DFND</investmentDiscretion>
+    <otherManager>1,34,56,13</otherManager>
+    <shrsOrPrnAmt>
+      <sshPrnamt>234</sshPrnamt>
+      <sshPrnamtType>PRN</sshPrnamtType>
+    </shrsOrPrnAmt>
+    <votingAuthority>
+      <Sole>25</Sole>
+      <Shared>30</Shared>
+      <None>179</None>
+    </votingAuthority>
+  </infoTable>
+  <infoTable>
+    <nameOfIssuer>Broadrdige</nameOfIssuer>
+    <titleOfClass>SHS CLASS A A</titleOfClass>
+    <cusip>123456789</cusip>
+    <figi>BBG001560KQ2</figi>
+    <value>3456789</value>
+    <putCall>Call</putCall>
+    <investmentDiscretion>OTR</investmentDiscretion>
+    <otherManager>1,56,14</otherManager>
+    <shrsOrPrnAmt>
+      <sshPrnamt>345</sshPrnamt>
+      <sshPrnamtType>PRN</sshPrnamtType>
+    </shrsOrPrnAmt>
+    <votingAuthority>
+      <Sole>345</Sole>
+      <Shared>0</Shared>
+      <None>0</None>
+    </votingAuthority>
+  </infoTable>
+  <infoTable>
+    <nameOfIssuer>HJK Partners</nameOfIssuer>
+    <titleOfClass>UNIT LTD PAR</titleOfClass>
+    <cusip>123456789</cusip>
+    <figi>BBG001560KQ3</figi>
+    <value>4567890</value>
+    <putCall>Call</putCall>
+    <investmentDiscretion>SOLE</investmentDiscretion>
+    <otherManager>456</otherManager>
+    <shrsOrPrnAmt>
+      <sshPrnamt>456</sshPrnamt>
+      <sshPrnamtType>PRN</sshPrnamtType>
+    </shrsOrPrnAmt>
+    <votingAuthority>
+      <Sole>0</Sole>
+      <Shared>0</Shared>
+      <None>0</None>
+    </votingAuthority>
+  </infoTable>
+  <infoTable>
+    <nameOfIssuer>LMNO Tech Cor</nameOfIssuer>
+    <titleOfClass>COM ADDED</titleOfClass>
+    <cusip>123456789</cusip>
+    <figi>BBG001560KQ4</figi>
+    <value>56789012</value>
+    <putCall>Put</putCall>
+    <investmentDiscretion>DFND</investmentDiscretion>
+    <otherManager>15</otherManager>
+    <shrsOrPrnAmt>
+      <sshPrnamt>56789</sshPrnamt>
+      <sshPrnamtType>SH</sshPrnamtType>
+    </shrsOrPrnAmt>
+    <votingAuthority>
+      <Sole>1234</Sole>
+      <Shared>23456</Shared>
+      <None>32099</None>
+    </votingAuthority>
+  </infoTable>
+  <infoTable>
+    <nameOfIssuer>PQRST Partners</nameOfIssuer>
+    <titleOfClass>SPONSORED A</titleOfClass>
+    <cusip>123456789</cusip>
+    <figi>BBG001560KQ5</figi>
+    <value>67890</value>
+    <putCall>Put</putCall>
+    <investmentDiscretion>OTR</investmentDiscretion>
+    <otherManager>1,56</otherManager>
+    <shrsOrPrnAmt>
+      <sshPrnamt>678</sshPrnamt>
+      <sshPrnamtType>SH</sshPrnamtType>
+    </shrsOrPrnAmt>
+    <votingAuthority>
+      <Sole>200</Sole>
+      <Shared>100</Shared>
+      <None>378</None>
+    </votingAuthority>
+  </infoTable>
+  <infoTable>
+    <nameOfIssuer>UVW Cap LP</nameOfIssuer>
+    <titleOfClass>UNIT LTD PAR</titleOfClass>
+    <cusip>123456789</cusip>
+    <figi>BBG001560KQ6</figi>
+    <value>7890123</value>
+    <putCall>Put</putCall>
+    <investmentDiscretion>SOLE</investmentDiscretion>
+    <otherManager>7890</otherManager>
+    <shrsOrPrnAmt>
+      <sshPrnamt>7890</sshPrnamt>
+      <sshPrnamtType>PRN</sshPrnamtType>
+    </shrsOrPrnAmt>
+    <votingAuthority>
+      <Sole>7890</Sole>
+      <Shared>0</Shared>
+      <None>0</None>
+    </votingAuthority>
+  </infoTable>
+  <infoTable>
+    <nameOfIssuer>XYZ Series Trust</nameOfIssuer>
+    <titleOfClass>S&amp;amp;P BIOTECH</titleOfClass>
+    <cusip>123456789</cusip>
+    <figi>BBG001560KQ7</figi>
+    <value>89012</value>
+    <putCall>Put</putCall>
+    <investmentDiscretion>OTR</investmentDiscretion>
+    <otherManager>1,34,56,19</otherManager>
+    <shrsOrPrnAmt>
+      <sshPrnamt>8901</sshPrnamt>
+      <sshPrnamtType>PRN</sshPrnamtType>
+    </shrsOrPrnAmt>
+    <votingAuthority>
+      <Sole>3500</Sole>
+      <Shared>1000</Shared>
+      <None>4401</None>
+    </votingAuthority>
+  </infoTable>
+</informationTable>
