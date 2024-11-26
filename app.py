@@ -22,19 +22,7 @@ COLUMN_MAPPING = {
     "None": "None"
 }
 
-def create_header():
-    # Add a header with Broadridge logo
-    logo_path = "BR-Logo-RGB-Blue.png"  # Update path if logo is present
-    with open(logo_path, "rb") as logo_file:
-        logo_base64 = base64.b64encode(logo_file.read()).decode("utf-8")
 
-    header_html = f"""
-    <div style="background-color:#f8f9fa; padding:10px; display: flex; justify-content: space-between; align-items: center;">
-        <h1 style="color: #2d2d2d; margin: 0; font-size: 1.5rem;">Excel to Form 13F XML Converter</h1>
-        <img src="data:image/png;base64,{logo_base64}" alt="Broadridge Logo" style="height:50px;">
-    </div>
-    """
-    st.markdown(header_html, unsafe_allow_html=True)
 
 def validate_excel_data(df):
     # Basic validation for required fields
@@ -113,7 +101,6 @@ def generate_sample_excel():
     return buffer
 
 # Streamlit UI
-create_header()
 
 st.markdown("### Instructions for Preparing the Information Table in Excel")
 
