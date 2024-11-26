@@ -1,3 +1,4 @@
 lxml
-etree
 streamlit
+pandas
+BytesIO
