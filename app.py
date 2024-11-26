@@ -3,6 +3,7 @@ from io import BytesIO
 from lxml import etree
 import xml.sax.saxutils as saxutils
 import streamlit as st
+import base64
 
 # Column mapping to match the XML structure
 COLUMN_MAPPING = {
@@ -20,6 +21,20 @@ COLUMN_MAPPING = {
     "Shared": "Shared",
     "None": "None"
 }
+
+def create_header():
+    # Add a header with Broadridge logo
+    logo_path = "BR-Logo-RGB-Blue.png"  # Update path if logo is present
+    with open(logo_path, "rb") as logo_file:
+        logo_base64 = base64.b64encode(logo_file.read()).decode("utf-8")
+
+    header_html = f"""
+    <div style="background-color:#f8f9fa; padding:10px; display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="color: #2d2d2d; margin: 0; font-size: 1.5rem;">Excel to Form 13F XML Converter</h1>
+        <img src="data:image/png;base64,{logo_base64}" alt="Broadridge Logo" style="height:50px;">
+    </div>
+    """
+    st.markdown(header_html, unsafe_allow_html=True)
 
 def validate_excel_data(df):
     # Basic validation for required fields
@@ -98,9 +113,26 @@ def generate_sample_excel():
     return buffer
 
 # Streamlit UI
-st.title("Excel to Form 13F XML Converter")
+create_header()
 
-# Provide sample Excel file
+st.markdown("### Instructions for Preparing the Information Table in Excel")
+
+st.markdown(
+    """
+    - The information table should have exactly 13 columns with the following headers: Name of Issuer, Title of Class, CUSIP, FIGI, Value (to the nearest dollar), Shares or Principal Amount, Shares/Principal, Put/Call, Investment Discretion, Other Managers, Sole, Shared, None.
+    - No blank rows above or below the table.
+    - Header information must be on one row (e.g., Name of Issuer, Title of Class, etc.).
+    - **CUSIP** number must be nine (9) characters.
+    - **FIGI** column can be blank if there is no value. If filled, it must be twelve (12) characters.
+    - The table must contain only whole numbers—no decimals. Manually correct rounded values in Excel to avoid validation issues.
+    - The only acceptable values in the **Shares/Principal** column are `SH` or `PRN`.
+    - The **Put/Call** column must be either blank or contain `Put` or `Call` (case-sensitive).
+    - **Investment Discretion** must be `SOLE`, `DFND`, or `OTR` (case-sensitive).
+    - If more than one value exists in **Other Managers**, use commas (e.g., `1,10,23`).
+    - Enter `0` in the Sole, Shared, and None columns if no values exist.
+    """
+)
+
 st.markdown("### Download a Sample Excel File")
 sample_excel = generate_sample_excel()
 st.download_button(
