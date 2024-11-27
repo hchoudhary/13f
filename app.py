@@ -71,4 +71,13 @@ def generate_sho_xml_from_excel(excel_file):
     for _, row in daily_gross_short_table2.iterrows():
         issuer_elem = etree.SubElement(daily_gross_table_elem, "table2IssuerList")
         etree.SubElement(issuer_elem, "shortIssuerName").text = row["shortIssuerName"]
-        etree.SubElement(issuer_elem, "leiNumber").text =
+        etree.SubElement(issuer_elem, "leiNumber").text = row["leiNumber"]
+        etree.SubElement(issuer_elem, "securitiesClassTitle").text = row["securitiesClassTitle"]
+        etree.SubElement(issuer_elem, "issuerCusip").text = row["issuerCusip"]
+        etree.SubElement(issuer_elem, "figiNumber").text = row["figiNumber"]
+        details_elem = etree.SubElement(issuer_elem, "table2Details")
+        etree.SubElement(details_elem, "settlementDate").text = row["settlementDate"]
+        etree.SubElement(details_elem, "netChangeOfShares").text = str(row["netChangeOfShares"])
+
+    # Return the generated XML as a string
+    return etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="UTF-8")
