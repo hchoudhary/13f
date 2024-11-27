@@ -123,6 +123,32 @@ with tab1:
         file_name="Sample_13F.xlsx",
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
+def validate_sho_excel_data(df):
+    required_columns = {"settlementDate", "issuerName", "shares", "value"}
+    
+    # Check for missing columns
+    if not required_columns.issubset(df.columns):
+        raise ValueError(f"Excel file must contain these columns: {required_columns}")
+    
+    # Validate settlementDate
+    if not pd.to_datetime(df["settlementDate"], errors="coerce").notna().all():
+        raise ValueError("Invalid date format in 'settlementDate' column. Use 'YYYY-MM-DD'.")
+    if (pd.to_datetime(df["settlementDate"]) > pd.Timestamp.now()).any():
+        raise ValueError("'settlementDate' cannot be in the future.")
+    
+    # Validate issuerName
+    if df["issuerName"].isna().any() or not df["issuerName"].str.strip().all():
+        raise ValueError("'issuerName' cannot be blank or contain invalid characters.")
+    
+    # Validate shares
+    if (df["shares"] <= 0).any() or not pd.api.types.is_integer_dtype(df["shares"]):
+        raise ValueError("'shares' must be a positive integer.")
+    
+    # Validate value
+    if (df["value"] <= 0).any() or not pd.api.types.is_integer_dtype(df["value"]):
+        raise ValueError("'value' must be a positive integer.")
+    
+    return df
 
 # SHO Filing Tab
 with tab2:
@@ -130,9 +156,14 @@ with tab2:
     uploaded_file_sho = st.file_uploader("Upload SHO Excel File", type=["xlsx"], key="sho")
     if uploaded_file_sho:
         try:
+            # Load and validate the SHO Excel file
             df_sho = pd.read_excel(uploaded_file_sho)
+            df_sho = validate_sho_excel_data(df_sho)
+            
+            # Generate SHO XML
             xml_sho = create_sho_xml(df_sho)
             st.success("SHO XML successfully generated!")
             st.download_button("Download SHO XML", data=xml_sho, file_name="formSHO.xml", mime="application/xml")
         except Exception as e:
             st.error(f"Error: {e}")
+
