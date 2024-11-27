@@ -1,8 +1,3 @@
-import pandas as pd
-from lxml import etree
-import streamlit as st
-
-# Function to generate SHO XML from Excel data
 def generate_sho_xml_from_excel(excel_file):
     # Read the Excel file into DataFrames
     excel_data = pd.ExcelFile(excel_file)
@@ -76,44 +71,4 @@ def generate_sho_xml_from_excel(excel_file):
     for _, row in daily_gross_short_table2.iterrows():
         issuer_elem = etree.SubElement(daily_gross_table_elem, "table2IssuerList")
         etree.SubElement(issuer_elem, "shortIssuerName").text = row["shortIssuerName"]
-        etree.SubElement(issuer_elem, "leiNumber").text = row["leiNumber"]
-        etree.SubElement(issuer_elem, "securitiesClassTitle").text = row["securitiesClassTitle"]
-        etree.SubElement(issuer_elem, "issuerCusip").text = row["issuerCusip"]
-        etree.SubElement(issuer_elem, "figiNumber").text = row["figiNumber"]
-        details_elem = etree.SubElement(issuer_elem, "table2Details")
-        etree.SubElement(details_elem, "settlementDate").text = row["settlementDate"]
-        etree.SubElement(details_elem, "netChangeOfShares").text = str(row["netChangeOfShares"])
-
-    # Return the generated XML as a string
-    return etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="UTF-8")
-
-# Streamlit App with Tabs
-st.title("Filing Application")
-
-# Create tabs
-tab1, tab2 = st.tabs(["13F Filing", "SHO Filing"])
-
-# 13F Filing Tab
-with tab1:
-    st.header("13F Filing")
-    st.write("This section is under construction.")
-
-# SHO Filing Tab
-with tab2:
-    st.header("SHO Filing")
-    uploaded_file = st.file_uploader("Upload SHO Excel File", type=["xlsx"])
-    if uploaded_file:
-        try:
-            # Generate SHO XML
-            sho_xml = generate_sho_xml_from_excel(uploaded_file)
-
-            # Display download button for SHO XML
-            st.success("SHO XML generated successfully!")
-            st.download_button(
-                label="Download SHO XML",
-                data=sho_xml,
-                file_name="SHO_Filing.xml",
-                mime="application/xml"
-            )
-        except Exception as e:
-            st.error(f"An error occurred: {e}")
+        etree.SubElement(issuer_elem, "leiNumber").text =
