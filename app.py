@@ -22,20 +22,6 @@ COLUMN_MAPPING = {
     "None": "None"
 }
 
-def create_header():
-    # Load Broadridge logo and encode it in Base64
-    logo_path = "/mnt/data/BR-Logo-RGB-Blue.png"  # Replace with the correct path to the logo
-    with open(logo_path, "rb") as image_file:
-        logo_base64 = base64.b64encode(image_file.read()).decode("utf-8")
-
-    # Create the header with logo on the right
-    logo_html = f"""
-    <div style="background-color: #f8f9fa; padding: 10px; display: flex; justify-content: space-between; align-items: center;">
-        <h1 style="color: #2d2d2d; margin: 0; font-size: 1.5rem;">Excel to XML Converter</h1>
-        <img src="data:image/png;base64,{logo_base64}" alt="Broadridge Logo" style="height: 50px;">
-    </div>
-    """
-    st.markdown(logo_html, unsafe_allow_html=True)
 
 def validate_excel_data(df):
     # Basic validation for required fields
@@ -114,7 +100,6 @@ def generate_sample_excel():
     return buffer
 
 # Streamlit UI
-create_header()
 
 st.markdown("### Upload Your Excel File")
 uploaded_file = st.file_uploader("Upload your Excel file", type=["xlsx"])
