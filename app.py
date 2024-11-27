@@ -131,3 +131,44 @@ st.download_button(
     file_name="Sample_13F.xlsx",
     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 )
+
+# Add instructions for users
+st.markdown("""
+### Instructions for Preparing Your Excel File
+To successfully generate the 13F XML, ensure your Excel file meets the following requirements:
+
+1. **Columns**: Your Excel file must include the following columns:
+   - Name of Issuer
+   - Title of Class
+   - CUSIP (exactly 9 characters)
+   - FIGI (12 characters or blank)
+   - Value (to the nearest dollar)
+   - Shares or Principal Amount
+   - Shares/Principal (only 'SH' or 'PRN')
+   - Put/Call (only 'Put' or 'Call', or leave blank)
+   - Investment Discretion (only 'SOLE', 'DFND', or 'OTR')
+   - Other Managers (comma-separated numbers, or leave blank)
+   - Sole (whole numbers only)
+   - Shared (whole numbers only)
+   - None (whole numbers only)
+
+2. **Validation Rules**:
+   - **CUSIP**: Must be exactly 9 characters.
+   - **FIGI**: Must be 12 characters if provided; can be left blank.
+   - **Shares/Principal**: Only 'SH' or 'PRN' are valid values.
+   - **Put/Call**: Only 'Put' or 'Call' are valid values; leave blank if not applicable.
+   - **Investment Discretion**: Only 'SOLE', 'DFND', or 'OTR' are allowed.
+   - **Sole**, **Shared**, **None**: These columns must have numeric values (use 0 if no value).
+
+3. **Format**:
+   - No empty rows or additional headers in the file.
+   - Ensure all values are formatted correctly as per the validation rules above.
+
+4. **Sample File**:
+   - Download the [Sample 13F Excel File](#) provided above to use as a template.
+
+5. **Generating XML**:
+   - Upload the prepared Excel file using the uploader above, and download the generated XML file.
+
+If you encounter any issues, please ensure your file follows the guidelines above.
+""")
