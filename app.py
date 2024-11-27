@@ -87,22 +87,33 @@ def generate_sho_xml_from_excel(excel_file):
     # Return the generated XML as a string
     return etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="UTF-8")
 
-# Streamlit App
-st.title("SHO Filing Application")
+# Streamlit App with Tabs
+st.title("Filing Application")
 
-uploaded_file = st.file_uploader("Upload SHO Excel File", type=["xlsx"])
-if uploaded_file:
-    try:
-        # Generate SHO XML
-        sho_xml = generate_sho_xml_from_excel(uploaded_file)
-        
-        # Display download button for SHO XML
-        st.success("SHO XML generated successfully!")
-        st.download_button(
-            label="Download SHO XML",
-            data=sho_xml,
-            file_name="SHO_Filing.xml",
-            mime="application/xml"
-        )
-    except Exception as e:
-        st.error(f"An error occurred: {e}")
+# Create tabs
+tab1, tab2 = st.tabs(["13F Filing", "SHO Filing"])
+
+# 13F Filing Tab
+with tab1:
+    st.header("13F Filing")
+    st.write("This section is under construction.")
+
+# SHO Filing Tab
+with tab2:
+    st.header("SHO Filing")
+    uploaded_file = st.file_uploader("Upload SHO Excel File", type=["xlsx"])
+    if uploaded_file:
+        try:
+            # Generate SHO XML
+            sho_xml = generate_sho_xml_from_excel(uploaded_file)
+
+            # Display download button for SHO XML
+            st.success("SHO XML generated successfully!")
+            st.download_button(
+                label="Download SHO XML",
+                data=sho_xml,
+                file_name="SHO_Filing.xml",
+                mime="application/xml"
+            )
+        except Exception as e:
+            st.error(f"An error occurred: {e}")
