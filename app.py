@@ -22,7 +22,6 @@ COLUMN_MAPPING = {
     "None": "None"
 }
 
-
 def validate_excel_data(df):
     # Basic validation for required fields
     required_columns = set(COLUMN_MAPPING.keys())
@@ -123,3 +122,12 @@ if uploaded_file:
         )
     except Exception as e:
         st.error(f"An error occurred: {e}")
+
+# Add a link to download a sample Excel file
+st.markdown("### Need a Sample Excel File?")
+st.download_button(
+    label="Download Sample 13F Excel File",
+    data=generate_sample_excel(),
+    file_name="Sample_13F.xlsx",
+    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+)
