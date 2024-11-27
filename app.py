@@ -1,23 +1,6 @@
 import pandas as pd
 from io import BytesIO
-from lxml import etree
-import xml.sax.saxutils as saxutils
 import streamlit as st
-import base64
-
-# Utility function to create a header
-def create_header():
-    logo_path = "/mnt/data/BR-Logo-RGB-Blue.png"  # Replace with the correct path to the logo
-    with open(logo_path, "rb") as image_file:
-        logo_base64 = base64.b64encode(image_file.read()).decode("utf-8")
-
-    logo_html = f"""
-    <div style="background-color: #f8f9fa; padding: 10px; display: flex; justify-content: space-between; align-items: center;">
-        <h1 style="color: #2d2d2d; margin: 0; font-size: 1.5rem;">Filing Application</h1>
-        <img src="data:image/png;base64,{logo_base64}" alt="Broadridge Logo" style="height: 50px;">
-    </div>
-    """
-    st.markdown(logo_html, unsafe_allow_html=True)
 
 # Utility function to generate SHO sample Excel
 def generate_sho_sample_excel():
@@ -94,9 +77,7 @@ def generate_sho_sample_excel():
     output.seek(0)
     return output
 
-# Streamlit UI
-create_header()
-
+# Streamlit UI without header
 # Create tabs for 13F Filing and SHO Filing
 tab1, tab2 = st.tabs(["13F Filing", "SHO Filing"])
 
